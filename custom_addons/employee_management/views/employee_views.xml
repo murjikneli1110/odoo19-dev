@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_employee_kanban" model="ir.ui.view">
+        <field name="name">custom.employee.kanban</field>
+        <field name="model">custom.employee</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="first_name" />
+                <field name="last_name" />
+                <field name="photo" />
+                <field name="department_id" />
+
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <field  
+                                name="photo"
+                                widget="image"
+                                class="oe_avatar"
+                                />
+                            </div>
+
+                            <div class="oe_kanban_details">
+                                <strong>
+                                    <field name="first_name" />
+                                    <span> </span>
+                                    <field name="last_name" />
+                                </strong>
+
+                                <div>
+                                    <field name="department_id" />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_employee_form" model="ir.ui.view">
+        <field name="name">custom.employee.form</field>
+        <field name="model">custom.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_employee_header">
+                        <div class="oe_employee_avatar">
+                            <field
+                                name="photo"
+                                widget="image"
+                                class="oe_avatar"
+                            />
+                        </div>
+
+                        <div class="oe_employee_info">
+                            <div class="oe_title">
+                                <h1>
+                                    <field name="first_name" />
+                                    <field name="last_name" />
+                                </h1>
+                            </div>
+                        </div>
+
+                        <group>
+                            <field name="department_id" />
+                        </group>
+                    </div>
+
+                    <notebook>
+                        <page string="Personal Information">
+                            <group>
+                                <group>
+                                    <field name="first_name" />
+                                    <field name="last_name" />
+                                    <field name="personal_id" />
+                                    <field name="birth_date" />
+                                </group>
+                                <group>
+                                    <field name="gender" />
+                                    <field name="citizenship_id" />
+                                    <field name="phone_number" />
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Employment">
+                            <group>
+                                <group>
+                                    <field name="department_id" />
+                                    <field name="is_department_admin" />
+                                </group>
+                                <group>
+                                    <field name="salary" />
+                                    <field name="user_id" />
+                                </group>
+                            </group>
+
+                            <separator string="Positions" />
+                            
+                            <field name="position_ids">
+                                <list>
+                                    <field name="title" />
+                                    <field name="start_date" />
+                                    <field name="end_date" />
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Traits">
+                            <field name="trait_ids" widget="many2many_tags"/>
+                        </page>
+                        
+                        <page string="Education">
+                            <field name="education_ids">
+                                <list>
+                                    <field name="institution" />
+                                    <field name="degree" />
+                                    <field name="field_of_study" />
+                                    <field name="start_date" />
+                                    <field name="end_date" />
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Attendance">
+                            <field name="attendance_ids">
+                                <list>
+                                    <field name="date" />
+                                    <field name="status" />
+                                    <field name="hours_worked" />
+                                    <field name="overtime_hours" />
+                                    <field name="undertime_hours" />
+                                </list>
+                            </field>
+                        </page>
+
+                        <page string="Payroll">
+                            <header>
+                                <button 
+                                    name="%(action_payroll_wizard)d"
+                                    type="action"
+                                    string="Generate Payroll"
+                                    class="btn-primary"
+                                />
+                            </header>
+                            
+                            <field name="payroll_ids" readonly="1">
+                                <list create="0">
+                                    <field name="year"/>
+                                    <field name="month"/>
+                                    <field name="salary"/>
+                                    <field name="worked_hours"/>
+                                    <field name="overtime_hours"/>
+                                    <field name="undertime_hours"/>
+                                    <field name="gross_pay"/>
+                                    <field name="calculated_at"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_employee" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">custom.employee</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+</odoo>

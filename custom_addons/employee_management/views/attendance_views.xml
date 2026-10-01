@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_attendance_list" model="ir.ui.view">
+        <field name="name">custom.attendance.list</field>
+        <field name="model">custom.attendance</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="employee_id" />
+                <field name="date" />
+                <field name="hours_worked" />
+                <field name="status" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_attendance_form" model="ir.ui.view">
+        <field name="name">custom.attendance.form</field>
+        <field name="model">custom.attendance</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id" />
+                            <field name="date" />
+                            <field name="status" />
+                        </group>
+                        <group>
+                            <field name="hours_worked" />
+                            <field name="overtime_hours" readonly="1" />
+                            <field name="undertime_hours" readonly="1" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_attendance_calendar" model="ir.ui.view">
+        <field name="name">custom.attendance.calendar</field>
+        <field name="model">custom.attendance</field>
+        <field name="arch" type="xml">
+            <calendar
+                string="Attendance"
+                date_start="date"
+                color="status"
+                event_open_popup="True"
+                quick_create="False"
+                form_view_id="%(view_attendance_form)d"
+            >
+                <field name="employee_id" />
+                <field name="status" />
+                <field name="hours_worked" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="action_attendance" model="ir.actions.act_window">
+        <field name="name">Attendance</field>
+        <field name="res_model">custom.attendance</field>
+        <field name="view_mode">calendar,list,form</field>
+    </record>
+
+    <record id="action_attendance_list" model="ir.actions.act_window">
+        <field name="name">Attendance List</field>
+        <field name="res_model">custom.attendance</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_attendance_calendar" model="ir.actions.act_window">
+        <field name="name">Calendar</field>
+        <field name="res_model">custom.attendance</field>
+        <field name="view_mode">calendar,form</field>
+    </record>
+</odoo>

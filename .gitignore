@@ -1,0 +1,25 @@
+# Odoo source
+odoo/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Odoo runtime
+data/
+*.log
+
+# Local Odoo configuration
+odoo.conf
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

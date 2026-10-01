@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ========================================================= -->
+    <!-- DEPARTMENTS                                                -->
+    <!-- ========================================================= -->
+
+    <!-- Root department -->
+    <record id="department_corporate" model="custom.department">
+        <field name="name">Corporate</field>
+    </record>
+
+    <record id="department_engineering" model="custom.department">
+        <field name="name">Engineering</field>
+        <field name="parent_id" ref="department_corporate"/>
+    </record>
+
+    <record id="department_human_resources" model="custom.department">
+        <field name="name">Human Resources</field>
+        <field name="parent_id" ref="department_corporate"/>
+    </record>
+
+    <record id="department_operations" model="custom.department">
+        <field name="name">Operations</field>
+        <field name="parent_id" ref="department_corporate"/>
+    </record>
+
+    <record id="department_finance" model="custom.department">
+        <field name="name">Finance</field>
+        <field name="parent_id" ref="department_corporate"/>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- TRAITS                                                     -->
+    <!-- ========================================================= -->
+
+    <record id="trait_leadership" model="custom.trait">
+        <field name="name">Leadership</field>
+    </record>
+
+    <record id="trait_teamwork" model="custom.trait">
+        <field name="name">Teamwork</field>
+    </record>
+
+    <record id="trait_communication" model="custom.trait">
+        <field name="name">Communication</field>
+    </record>
+
+    <record id="trait_problem_solving" model="custom.trait">
+        <field name="name">Problem Solving</field>
+    </record>
+
+    <record id="trait_analytical" model="custom.trait">
+        <field name="name">Analytical Thinking</field>
+    </record>
+
+    <record id="trait_creative" model="custom.trait">
+        <field name="name">Creativity</field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- EMPLOYEES                                                   -->
+    <!-- ========================================================= -->
+
+    <!-- Corporate -->
+    <record id="employee_james_carter" model="custom.employee">
+        <field name="first_name">James</field>
+        <field name="last_name">Carter</field>
+        <field name="personal_id">DEMO000001</field>
+        <field name="birth_date">1985-03-15</field>
+        <field name="gender">male</field>
+        <field name="phone_number">555-0101</field>
+        <field name="salary">5000</field>
+        <field name="department_id" ref="department_corporate"/>
+    </record>
+
+    <!-- Engineering -->
+    <record id="employee_emma_wilson" model="custom.employee">
+        <field name="first_name">Emma</field>
+        <field name="last_name">Wilson</field>
+        <field name="personal_id">DEMO000002</field>
+        <field name="birth_date">1988-07-21</field>
+        <field name="gender">female</field>
+        <field name="phone_number">555-0102</field>
+        <field name="salary">4200</field>
+        <field name="department_id" ref="department_engineering"/>
+        <field name="is_department_admin">1</field>
+    </record>
+
+    <record id="employee_liam_brown" model="custom.employee">
+        <field name="first_name">Liam</field>
+        <field name="last_name">Brown</field>
+        <field name="personal_id">DEMO000003</field>
+        <field name="birth_date">1992-01-10</field>
+        <field name="gender">male</field>
+        <field name="phone_number">555-0103</field>
+        <field name="salary">3200</field>
+        <field name="department_id" ref="department_engineering"/>
+    </record>
+
+    <record id="employee_sophia_miller" model="custom.employee">
+        <field name="first_name">Sophia</field>
+        <field name="last_name">Miller</field>
+        <field name="personal_id">DEMO000004</field>
+        <field name="birth_date">1995-11-03</field>
+        <field name="gender">female</field>
+        <field name="phone_number">555-0104</field>
+        <field name="salary">2900</field>
+        <field name="department_id" ref="department_engineering"/>
+    </record>
+
+    <!-- HR -->
+    <record id="employee_noah_davis" model="custom.employee">
+        <field name="first_name">Noah</field>
+        <field name="last_name">Davis</field>
+        <field name="personal_id">DEMO000005</field>
+        <field name="birth_date">1987-05-28</field>
+        <field name="gender">male</field>
+        <field name="phone_number">555-0105</field>
+        <field name="salary">4000</field>
+        <field name="department_id" ref="department_human_resources"/>
+        <field name="is_department_admin">1</field>
+    </record>
+
+    <record id="employee_olivia_taylor" model="custom.employee">
+        <field name="first_name">Olivia</field>
+        <field name="last_name">Taylor</field>
+        <field name="personal_id">DEMO000006</field>
+        <field name="birth_date">1991-09-17</field>
+        <field name="gender">female</field>
+        <field name="phone_number">555-0106</field>
+        <field name="salary">3100</field>
+        <field name="department_id" ref="department_human_resources"/>
+    </record>
+
+    <!-- Operations -->
+    <record id="employee_ethan_anderson" model="custom.employee">
+        <field name="first_name">Ethan</field>
+        <field name="last_name">Anderson</field>
+        <field name="personal_id">DEMO000007</field>
+        <field name="birth_date">1989-12-08</field>
+        <field name="gender">male</field>
+        <field name="phone_number">555-0107</field>
+        <field name="salary">3800</field>
+        <field name="department_id" ref="department_operations"/>
+        <field name="is_department_admin">1</field>
+    </record>
+
+    <record id="employee_ava_thompson" model="custom.employee">
+        <field name="first_name">Ava</field>
+        <field name="last_name">Thompson</field>
+        <field name="personal_id">DEMO000008</field>
+        <field name="birth_date">1994-02-26</field>
+        <field name="gender">female</field>
+        <field name="phone_number">555-0108</field>
+        <field name="salary">3000</field>
+        <field name="department_id" ref="department_operations"/>
+    </record>
+
+    <!-- Finance -->
+    <record id="employee_william_martin" model="custom.employee">
+        <field name="first_name">William</field>
+        <field name="last_name">Martin</field>
+        <field name="personal_id">DEMO000009</field>
+        <field name="birth_date">1986-06-14</field>
+        <field name="gender">male</field>
+        <field name="phone_number">555-0109</field>
+        <field name="salary">4300</field>
+        <field name="department_id" ref="department_finance"/>
+        <field name="is_department_admin">1</field>
+    </record>
+
+    <record id="employee_isabella_white" model="custom.employee">
+        <field name="first_name">Isabella</field>
+        <field name="last_name">White</field>
+        <field name="personal_id">DEMO000010</field>
+        <field name="birth_date">1993-08-30</field>
+        <field name="gender">female</field>
+        <field name="phone_number">555-0110</field>
+        <field name="salary">3300</field>
+        <field name="department_id" ref="department_finance"/>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- DEPARTMENT MANAGERS                                        -->
+    <!-- ========================================================= -->
+
+    <record id="department_corporate" model="custom.department">
+        <field name="manager_id" ref="employee_james_carter"/>
+    </record>
+
+    <record id="department_engineering" model="custom.department">
+        <field name="manager_id" ref="employee_emma_wilson"/>
+    </record>
+
+    <record id="department_human_resources" model="custom.department">
+        <field name="manager_id" ref="employee_noah_davis"/>
+    </record>
+
+    <record id="department_operations" model="custom.department">
+        <field name="manager_id" ref="employee_ethan_anderson"/>
+    </record>
+
+    <record id="department_finance" model="custom.department">
+        <field name="manager_id" ref="employee_william_martin"/>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- EMPLOYEE TRAITS                                            -->
+    <!-- ========================================================= -->
+
+    <record id="employee_james_carter" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_leadership')),
+            (4, ref('trait_communication')),
+            (4, ref('trait_teamwork'))
+        ]"/>
+    </record>
+
+    <record id="employee_emma_wilson" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_leadership')),
+            (4, ref('trait_problem_solving')),
+            (4, ref('trait_communication'))
+        ]"/>
+    </record>
+
+    <record id="employee_liam_brown" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_problem_solving')),
+            (4, ref('trait_teamwork'))
+        ]"/>
+    </record>
+
+    <record id="employee_sophia_miller" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_creative')),
+            (4, ref('trait_teamwork'))
+        ]"/>
+    </record>
+
+    <record id="employee_noah_davis" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_leadership')),
+            (4, ref('trait_communication')),
+            (4, ref('trait_analytical'))
+        ]"/>
+    </record>
+
+    <record id="employee_olivia_taylor" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_communication')),
+            (4, ref('trait_analytical'))
+        ]"/>
+    </record>
+
+    <record id="employee_ethan_anderson" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_leadership')),
+            (4, ref('trait_problem_solving'))
+        ]"/>
+    </record>
+
+    <record id="employee_ava_thompson" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_teamwork')),
+            (4, ref('trait_creative'))
+        ]"/>
+    </record>
+
+    <record id="employee_william_martin" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_leadership')),
+            (4, ref('trait_analytical'))
+        ]"/>
+    </record>
+
+    <record id="employee_isabella_white" model="custom.employee">
+        <field name="trait_ids" eval="[
+            (4, ref('trait_analytical')),
+            (4, ref('trait_communication')),
+            (4, ref('trait_teamwork'))
+        ]"/>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- EDUCATION                                                  -->
+    <!-- ========================================================= -->
+
+    <record id="education_james_business" model="custom.education">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="institution">Georgian National University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Business Administration</field>
+        <field name="start_date">2003-09-01</field>
+        <field name="end_date">2007-06-30</field>
+    </record>
+
+    <record id="education_james_management" model="custom.education">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="institution">Tbilisi Business School</field>
+        <field name="degree">Master's Degree</field>
+        <field name="field_of_study">Management</field>
+        <field name="start_date">2008-09-01</field>
+        <field name="end_date">2010-06-30</field>
+    </record>
+
+    <record id="education_emma_computer_science" model="custom.education">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="institution">Tbilisi State University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Computer Science</field>
+        <field name="start_date">2006-09-01</field>
+        <field name="end_date">2010-06-30</field>
+    </record>
+
+    <record id="education_emma_software" model="custom.education">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="institution">Caucasus University</field>
+        <field name="degree">Master's Degree</field>
+        <field name="field_of_study">Software Engineering</field>
+        <field name="start_date">2011-09-01</field>
+        <field name="end_date">2013-06-30</field>
+    </record>
+
+    <record id="education_liam_computer_science" model="custom.education">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="institution">Ilia State University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Computer Science</field>
+        <field name="start_date">2010-09-01</field>
+        <field name="end_date">2014-06-30</field>
+    </record>
+
+    <record id="education_sophia_design" model="custom.education">
+        <field name="employee_id" ref="employee_sophia_miller"/>
+        <field name="institution">Tbilisi Academy of Arts</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Graphic Design</field>
+        <field name="start_date">2013-09-01</field>
+        <field name="end_date">2017-06-30</field>
+    </record>
+
+    <record id="education_noah_hr" model="custom.education">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="institution">Caucasus University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Human Resources Management</field>
+        <field name="start_date">2005-09-01</field>
+        <field name="end_date">2009-06-30</field>
+    </record>
+
+    <record id="education_olivia_psychology" model="custom.education">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="institution">Tbilisi State University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Psychology</field>
+        <field name="start_date">2009-09-01</field>
+        <field name="end_date">2013-06-30</field>
+    </record>
+
+    <record id="education_ethan_operations" model="custom.education">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="institution">Georgian Technical University</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Industrial Engineering</field>
+        <field name="start_date">2007-09-01</field>
+        <field name="end_date">2011-06-30</field>
+    </record>
+
+    <record id="education_william_finance" model="custom.education">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="institution">Free University of Tbilisi</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Finance</field>
+        <field name="start_date">2006-09-01</field>
+        <field name="end_date">2010-06-30</field>
+    </record>
+
+    <record id="education_isabella_accounting" model="custom.education">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="institution">University of Georgia</field>
+        <field name="degree">Bachelor's Degree</field>
+        <field name="field_of_study">Accounting</field>
+        <field name="start_date">2011-09-01</field>
+        <field name="end_date">2015-06-30</field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- POSITIONS                                                   -->
+    <!-- ========================================================= -->
+
+    <record id="position_james_specialist" model="custom.position">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="title">Business Specialist</field>
+        <field name="start_date">2010-07-01</field>
+        <field name="end_date">2015-12-31</field>
+    </record>
+
+    <record id="position_james_manager" model="custom.position">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="title">Corporate Manager</field>
+        <field name="start_date">2016-01-01</field>
+    </record>
+
+    <record id="position_emma_developer" model="custom.position">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="title">Software Developer</field>
+        <field name="start_date">2013-07-01</field>
+        <field name="end_date">2018-12-31</field>
+    </record>
+
+    <record id="position_emma_manager" model="custom.position">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="title">Engineering Manager</field>
+        <field name="start_date">2019-01-01</field>
+    </record>
+
+    <record id="position_liam_junior" model="custom.position">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="title">Junior Developer</field>
+        <field name="start_date">2015-07-01</field>
+        <field name="end_date">2018-12-31</field>
+    </record>
+
+    <record id="position_liam_developer" model="custom.position">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="title">Software Developer</field>
+        <field name="start_date">2019-01-01</field>
+    </record>
+
+    <record id="position_sophia_designer" model="custom.position">
+        <field name="employee_id" ref="employee_sophia_miller"/>
+        <field name="title">UX Designer</field>
+        <field name="start_date">2017-07-01</field>
+    </record>
+
+    <record id="position_noah_specialist" model="custom.position">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="title">HR Specialist</field>
+        <field name="start_date">2010-07-01</field>
+        <field name="end_date">2016-12-31</field>
+    </record>
+
+    <record id="position_noah_manager" model="custom.position">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="title">HR Manager</field>
+        <field name="start_date">2017-01-01</field>
+    </record>
+
+    <record id="position_olivia_specialist" model="custom.position">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="title">HR Specialist</field>
+        <field name="start_date">2016-07-01</field>
+    </record>
+
+    <record id="position_ethan_supervisor" model="custom.position">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="title">Operations Supervisor</field>
+        <field name="start_date">2014-01-01</field>
+        <field name="end_date">2019-12-31</field>
+    </record>
+
+    <record id="position_ethan_manager" model="custom.position">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="title">Operations Manager</field>
+        <field name="start_date">2020-01-01</field>
+    </record>
+
+    <record id="position_ava_coordinator" model="custom.position">
+        <field name="employee_id" ref="employee_ava_thompson"/>
+        <field name="title">Operations Coordinator</field>
+        <field name="start_date">2018-07-01</field>
+    </record>
+
+    <record id="position_william_accountant" model="custom.position">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="title">Accountant</field>
+        <field name="start_date">2012-07-01</field>
+        <field name="end_date">2017-12-31</field>
+    </record>
+
+    <record id="position_william_manager" model="custom.position">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="title">Finance Manager</field>
+        <field name="start_date">2018-01-01</field>
+    </record>
+
+    <record id="position_isabella_accountant" model="custom.position">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="title">Accountant</field>
+        <field name="start_date">2016-07-01</field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- ATTENDANCE - AUGUST 2026                                  -->
+    <!-- ========================================================= -->
+
+    <!-- James -->
+    <record id="attendance_james_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_james_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">10</field>
+    </record>
+
+    <record id="attendance_james_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_james_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">7</field>
+    </record>
+
+    <record id="attendance_james_0807" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-07</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_james_0808" model="custom.attendance">
+        <field name="employee_id" ref="employee_james_carter"/>
+        <field name="date">2026-08-08</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">5</field>
+    </record>
+
+    <!-- Emma -->
+    <record id="attendance_emma_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_emma_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">9</field>
+    </record>
+
+    <record id="attendance_emma_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_emma_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">leave</field>
+        <field name="hours_worked">0</field>
+    </record>
+
+    <record id="attendance_emma_0807" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-08-07</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <!-- Liam -->
+    <record id="attendance_liam_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">6</field>
+    </record>
+
+    <record id="attendance_liam_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_liam_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">11</field>
+    </record>
+
+    <record id="attendance_liam_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">sick_leave</field>
+        <field name="hours_worked">0</field>
+    </record>
+
+    <record id="attendance_liam_0808" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-08-08</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">4</field>
+    </record>
+
+    <!-- Noah -->
+    <record id="attendance_noah_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_noah_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_noah_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_noah_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">9</field>
+    </record>
+
+    <record id="attendance_noah_0809" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-08-09</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">6</field>
+    </record>
+
+    <!-- Olivia -->
+    <record id="attendance_olivia_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_olivia_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">7</field>
+    </record>
+
+    <record id="attendance_olivia_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_olivia_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_olivia_taylor"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <!-- Ethan -->
+    <record id="attendance_ethan_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">10</field>
+    </record>
+
+    <record id="attendance_ethan_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0807" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-07</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0808" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-08-08</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <!-- Ava -->
+    <record id="attendance_ava_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_ava_thompson"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ava_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_ava_thompson"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ava_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_ava_thompson"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">absent</field>
+        <field name="hours_worked">0</field>
+    </record>
+
+    <record id="attendance_ava_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_ava_thompson"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">7</field>
+    </record>
+
+    <!-- William -->
+    <record id="attendance_william_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">9</field>
+    </record>
+
+    <record id="attendance_william_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0808" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-08-08</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">5</field>
+    </record>
+
+    <!-- Isabella -->
+    <record id="attendance_isabella_0803" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-08-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0804" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-08-04</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0805" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-08-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0806" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-08-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0807" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-08-07</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+
+    <!-- ========================================================= -->
+    <!-- ATTENDANCE - SEPTEMBER 2026                               -->
+    <!-- ========================================================= -->
+
+    <record id="attendance_emma_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_emma_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">10</field>
+    </record>
+
+    <record id="attendance_emma_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_emma_0905" model="custom.attendance">
+        <field name="employee_id" ref="employee_emma_wilson"/>
+        <field name="date">2026-09-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">6</field>
+    </record>
+
+    <record id="attendance_liam_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_liam_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">7</field>
+    </record>
+
+    <record id="attendance_liam_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">9</field>
+    </record>
+
+    <record id="attendance_liam_0905" model="custom.attendance">
+        <field name="employee_id" ref="employee_liam_brown"/>
+        <field name="date">2026-09-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">5</field>
+    </record>
+
+    <record id="attendance_noah_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_noah_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_noah_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">leave</field>
+        <field name="hours_worked">0</field>
+    </record>
+
+    <record id="attendance_noah_0905" model="custom.attendance">
+        <field name="employee_id" ref="employee_noah_davis"/>
+        <field name="date">2026-09-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">9</field>
+    </record>
+
+    <record id="attendance_ethan_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_ethan_0906" model="custom.attendance">
+        <field name="employee_id" ref="employee_ethan_anderson"/>
+        <field name="date">2026-09-06</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">6</field>
+    </record>
+
+    <record id="attendance_william_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_william_0905" model="custom.attendance">
+        <field name="employee_id" ref="employee_william_martin"/>
+        <field name="date">2026-09-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0901" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-09-01</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0902" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-09-02</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">8</field>
+    </record>
+
+    <record id="attendance_isabella_0903" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-09-03</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">7</field>
+    </record>
+
+    <record id="attendance_isabella_0905" model="custom.attendance">
+        <field name="employee_id" ref="employee_isabella_white"/>
+        <field name="date">2026-09-05</field>
+        <field name="status">worked</field>
+        <field name="hours_worked">4</field>
+    </record>
+    
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem 
+        id="menu_hr_management"
+        name="HR Management"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="menu_employee"
+        name="Employees"
+        parent="menu_hr_management"
+        action="action_employee"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="menu_department"
+        name="Departments"
+        parent="menu_hr_management"
+        action="action_department"
+        sequence="20"
+    />
+
+    <menuitem 
+        id="menu_education"
+        name="Education"
+        parent="menu_hr_management"
+        action="action_education"
+        sequence="30"
+    />
+
+    <menuitem 
+        id="menu_position"
+        name="Positions"
+        parent="menu_hr_management"
+        action="action_position"
+        sequence="40"
+    />
+
+    <menuitem 
+        id="menu_attendance"
+        name="Attendance"
+        parent="menu_hr_management"
+        action="action_attendance"
+        sequence="50"
+    />
+
+    <menuitem 
+        id="menu_attendance_list"
+        name="Attendance List"
+        parent="menu_attendance"
+        action="action_attendance_list"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="menu_attendance_calendar"
+        name="Calendar"
+        parent="menu_attendance"
+        action="action_attendance_calendar"
+        sequence="20"
+    />
+
+    <menuitem 
+        id="menu_payroll"
+        name="Payroll"
+        parent="menu_hr_management"
+        action="action_payroll"
+        sequence="60"
+    />
+
+    <menuitem 
+        id="menu_trait"
+        name="Traits"
+        parent="menu_hr_management"
+        action="action_trait"
+        sequence="70"
+    />
+</odoo>

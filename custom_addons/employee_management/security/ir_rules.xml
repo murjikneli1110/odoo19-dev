@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="rule_custom_employee_department_manager" model="ir.rule">
+        <field name="name">Custom Employee: Department Manager</field>
+        <field name="model_id" ref="model_custom_employee" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_employee_own" model="ir.rule">
+        <field name="name">Custom Emplyoee: Own</field>
+        <field name="model_id" ref="model_custom_employee" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_department_manager" model="ir.rule">
+        <field name="name">Custom Department: Manager</field>
+        <field name="model_id" ref="model_custom_department" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_department_own" model="ir.rule">
+        <field name="name">Custom Department: Own</field>
+        <field name="model_id" ref="model_custom_department" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_ids.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_education_manager" model="ir.rule">
+        <field name="name">Custom Education: Manager</field>
+        <field name="model_id" ref="model_custom_education" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_id.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_education_own" model="ir.rule">
+        <field name="name">Custom Education: Own</field>
+        <field name="model_id" ref="model_custom_education" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_id.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_position_manager" model="ir.rule">
+        <field name="name">Custom Position: Manager</field>
+        <field name="model_id" ref="model_custom_position" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_id.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_position_own" model="ir.rule">
+        <field name="name">Custom Position: Own</field>
+        <field name="model_id" ref="model_custom_position" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_id.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_attendance_manager" model="ir.rule">
+        <field name="name">Custom Attendance: Manager</field>
+        <field name="model_id" ref="model_custom_attendance" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_id.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_attendance_own" model="ir.rule">
+        <field name="name">Custom Attendance: Own</field>
+        <field name="model_id" ref="model_custom_attendance" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_id.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_payroll_manager" model="ir.rule">
+        <field name="name">Custom Payroll: Manager</field>
+        <field name="model_id" ref="model_custom_payroll" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_id.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_payroll_own" model="ir.rule">
+        <field name="name">Custom Payroll: Own</field>
+        <field name="model_id" ref="model_custom_payroll" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_id.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_payroll_wizard_own" model="ir.rule">
+        <field name="name">Custom Payroll Wizard: Manager</field>
+        <field name="model_id" ref="model_custom_payroll_wizard" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_id.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+
+    <record id="rule_custom_trait_manager" model="ir.rule">
+        <field name="name">Custom Trait: Manager</field>
+        <field name="model_id" ref="model_custom_trait" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_department_manager')])]"/>
+        <field name="domain_force">
+            [('employee_ids.department_id.manager_id.user_id', '=', user.id)]
+        </field>
+    </record>
+    <record id="rule_custom_trait_own" model="ir.rule">
+        <field name="name">Custom Trait: Own</field>
+        <field name="model_id" ref="model_custom_trait" />
+        <field name="groups" eval="[(6, 0, [ref('employee_management.group_employee_own')])]"/>
+        <field name="domain_force">
+            [('employee_ids.user_id', '=', user.id)]
+        </field>
+    </record>
+</odoo>
